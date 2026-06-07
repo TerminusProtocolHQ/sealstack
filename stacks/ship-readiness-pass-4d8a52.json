@@ -1,0 +1,15 @@
+{
+  "id": "ship-readiness-pass-4d8a52",
+  "kind": "stack",
+  "title": "Ship readiness pass",
+  "summary": "Preflight an AI build, then summarize the diff.",
+  "cards": [
+    "ai-build-preflight-d96c13",
+    "summarize-a-diff-637455"
+  ],
+  "seal": {
+    "fingerprint": "sha256:4d8a524eb63b72b3a41c42dc28a1132b7b4916f071a9c40af9e8f312d6c2972a",
+    "created": "2026-06-07T19:38:10.792Z",
+    "version": 1
+  }
+}

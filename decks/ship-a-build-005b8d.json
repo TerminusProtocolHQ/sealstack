@@ -1,0 +1,14 @@
+{
+  "id": "ship-a-build-005b8d",
+  "kind": "deck",
+  "title": "Ship a build",
+  "summary": "The full pre-publish workflow.",
+  "stacks": [
+    "ship-readiness-pass-4d8a52"
+  ],
+  "seal": {
+    "fingerprint": "sha256:005b8d5b13621a9749fba0848c929e52a1735d70f72eba5ca010c888d50c708c",
+    "created": "2026-06-07T19:38:10.793Z",
+    "version": 1
+  }
+}

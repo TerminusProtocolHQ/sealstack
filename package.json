@@ -1,0 +1,58 @@
+{
+  "name": "sealstack-mcp",
+  "version": "0.6.1",
+  "description": "SealStack \u2014 a local-first, delivery-agnostic capability layer: sealed Cards that run as context, SKILL.md, or MCP tools.",
+  "type": "module",
+  "bin": {
+    "sealstack-mcp": "server.mjs"
+  },
+  "scripts": {
+    "start": "node server.mjs",
+    "test": "node --test",
+    "prepublishOnly": "npm test"
+  },
+  "keywords": [
+    "mcp",
+    "model-context-protocol",
+    "sealstack",
+    "cards",
+    "local-first",
+    "agent-workflows",
+    "skills"
+  ],
+  "license": "MIT",
+  "engines": {
+    "node": ">=18"
+  },
+  "author": "Terminus Protocol",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/TerminusProtocolHQ/sealstack.git"
+  },
+  "bugs": {
+    "url": "https://github.com/TerminusProtocolHQ/sealstack/issues"
+  },
+  "homepage": "https://github.com/TerminusProtocolHQ/sealstack#readme",
+  "files": [
+    "seal.mjs",
+    "card.mjs",
+    "model.mjs",
+    "skill.mjs",
+    "server.mjs",
+    "schema/",
+    "cards/",
+    "stacks/",
+    "decks/",
+    "runs/",
+    "SPEC.md",
+    "README.md",
+    "PUBLISHING.md",
+    "HARDENING_REPORT.md",
+    "RECEIPT.md",
+    "claude_desktop_config.example.json",
+    "LICENSE",
+    "card.test.mjs",
+    "model.test.mjs",
+    "skill.test.mjs"
+  ]
+}

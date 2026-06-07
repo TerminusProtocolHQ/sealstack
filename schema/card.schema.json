@@ -1,0 +1,78 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://sealstack.dev/schema/card.schema.json",
+  "title": "Card",
+  "$comment": "SealStack Card Spec v1.0. The seal covers title+body only; extra top-level fields (incl. action, meta) are allowed and MUST NOT affect the fingerprint.",
+  "type": "object",
+  "required": [
+    "id",
+    "title",
+    "body",
+    "seal"
+  ],
+  "additionalProperties": true,
+  "properties": {
+    "id": {
+      "type": "string",
+      "pattern": "^[a-z0-9](?:[a-z0-9-]{0,79})-[0-9a-f]{6}$"
+    },
+    "title": {
+      "type": "string",
+      "minLength": 1,
+      "pattern": "\\S"
+    },
+    "summary": {
+      "type": "string"
+    },
+    "tags": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "body": {
+      "type": "string",
+      "minLength": 1,
+      "description": "Opaque text: prose, instructions, or code.",
+      "pattern": "\\S"
+    },
+    "action": {
+      "type": "object",
+      "description": "Optional seam, host-executed (e.g. run_js). Additive; NOT covered by the seal.",
+      "required": [
+        "tool"
+      ],
+      "properties": {
+        "tool": {
+          "type": "string"
+        },
+        "asset": {
+          "type": "string"
+        }
+      }
+    },
+    "seal": {
+      "type": "object",
+      "required": [
+        "fingerprint",
+        "created",
+        "version"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "fingerprint": {
+          "type": "string",
+          "pattern": "^sha256:[0-9a-f]{64}$"
+        },
+        "created": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "version": {
+          "type": "integer",
+          "const": 1
+        }
+      }
+    }
+  }
+}
