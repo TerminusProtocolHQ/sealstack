@@ -1,0 +1,11 @@
+{
+  "mcpServers": {
+    "sealstack": {
+      "command": "node",
+      "args": ["/ABSOLUTE/PATH/TO/sealstack/server.mjs"],
+      "env": {
+        "SEALSTACK_DATA": "/ABSOLUTE/PATH/TO/your/seals"
+      }
+    }
+  }
+}

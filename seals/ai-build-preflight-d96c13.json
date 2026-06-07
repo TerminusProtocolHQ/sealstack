@@ -1,0 +1,15 @@
+{
+  "id": "ai-build-preflight-d96c13",
+  "title": "AI build preflight",
+  "summary": "Check an AI-built app before publishing.",
+  "tags": [
+    "preflight",
+    "ship-readiness"
+  ],
+  "body": "Goal: catch obvious breakages before this AI-built app goes public.\n\nDo:\n1. Install clean and run the start command; confirm it boots.\n2. Click the primary happy path end to end.\n3. Secrets: no keys/tokens committed; .env ignored.\n4. Check licenses on new deps.\n5. Confirm README install steps work on a fresh copy.\n\nProduce: a short PASS/FAIL list, one line of evidence each.\nStop when: every item has a verdict.\nRecord: the verdict list as the run receipt.",
+  "seal": {
+    "fingerprint": "sha256:d96c13c002f6529c9bae87dd5cf019774a8885a9bff059057523c21a560917fd",
+    "created": "2026-06-07T03:36:04.843Z",
+    "version": 1
+  }
+}

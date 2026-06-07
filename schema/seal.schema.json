@@ -1,0 +1,34 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://sealstack.dev/schema/seal.schema.json",
+  "title": "Seal",
+  "$comment": "SealStack Seal Spec v1.0. Fingerprint covers title+body only; extra top-level fields are allowed and must not affect the fingerprint.",
+  "type": "object",
+  "required": ["id", "title", "body", "seal"],
+  "additionalProperties": true,
+  "properties": {
+    "id": {
+      "type": "string",
+      "pattern": "^[a-z0-9](?:[a-z0-9-]{0,79})-[0-9a-f]{6}$",
+      "description": "slug(title)-<6 hex of fingerprint>."
+    },
+    "title": { "type": "string", "minLength": 1 },
+    "summary": { "type": "string" },
+    "tags": { "type": "array", "items": { "type": "string" } },
+    "body": {
+      "type": "string",
+      "minLength": 1,
+      "description": "What to do, what to use, what to produce, when to stop, what to record."
+    },
+    "seal": {
+      "type": "object",
+      "required": ["fingerprint", "created", "version"],
+      "additionalProperties": false,
+      "properties": {
+        "fingerprint": { "type": "string", "pattern": "^sha256:[0-9a-f]{64}$" },
+        "created": { "type": "string", "format": "date-time" },
+        "version": { "type": "integer", "const": 1 }
+      }
+    }
+  }
+}

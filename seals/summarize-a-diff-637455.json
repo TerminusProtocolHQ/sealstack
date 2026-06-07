@@ -1,0 +1,14 @@
+{
+  "id": "summarize-a-diff-637455",
+  "title": "Summarize a diff",
+  "summary": "Turn a code diff into a tight review summary.",
+  "tags": [
+    "review"
+  ],
+  "body": "Do: read the provided diff. For each changed file write one bullet: what changed and why it matters. Flag anything risky (secrets, broad deletes, API changes).\n\nProduce: a 3-7 bullet summary, riskiest first.\nStop when: every changed file is covered.\nRecord: the bullet list.",
+  "seal": {
+    "fingerprint": "sha256:637455a14743700ce151895f3199f2beecc6da70a2ebfc67546e558d6b9bed72",
+    "created": "2026-06-07T03:36:04.889Z",
+    "version": 1
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "name": "sealstack-mcp",
+  "version": "0.1.1",
+  "description": "SealStack \u2014 a local-first MCP server for storing and serving Seals: reusable, fingerprinted workflow units.",
+  "type": "module",
+  "bin": {
+    "sealstack-mcp": "server.mjs"
+  },
+  "scripts": {
+    "start": "node server.mjs",
+    "test": "node --test seal.test.mjs"
+  },
+  "keywords": [
+    "mcp",
+    "model-context-protocol",
+    "sealstack",
+    "local-first",
+    "agent-workflows"
+  ],
+  "license": "MIT",
+  "engines": {
+    "node": ">=18"
+  }
+}
