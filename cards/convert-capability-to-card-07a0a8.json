@@ -1,0 +1,36 @@
+{
+  "id": "convert-capability-to-card-07a0a8",
+  "title": "Convert capability to Card",
+  "summary": "Turn a raw capability or task pattern into a sealed Card body.",
+  "tags": [
+    "hydration",
+    "card",
+    "scaffold"
+  ],
+  "body": "## Goal\nConvert one reusable capability into a bounded Card with explicit hydration, output, carry, and purge rules.\n\n## Hydrate\n- the raw capability description or task pattern\n- any required input references by name only\n- known output requirements or consumer expectations\n- known context that must not persist beyond the card\n\n## Do\n1. Name the single move this Card performs; split it if it contains more than one bounded move.\n2. Write the Goal as one outcome line.\n3. Write Hydrate with only the minimum inputs and references required to run the move.\n4. Write Do as bounded steps, not open-ended exploration.\n5. Write Produce as an exact artifact contract and shape.\n6. Write Stop when as an explicit completion condition.\n7. Write Carry as the compact state needed by the next Card or Run.\n8. Write Purge as the state that must not survive the boundary.\n\n## Produce\nA Card body containing exactly these sections: Goal, Hydrate, Do, Produce, Stop when, Carry, Purge.\n\n## Stop when\nThe Card body describes one bounded move and each hydration field is populated with concrete, minimal content.\n\n## Carry\ncard title, output artifact name, carry fields, purge fields\n\n## Purge\nthe raw brainstorming text, duplicate context, and any unneeded source material",
+  "seal": {
+    "fingerprint": "sha256:07a0a8baa466c0245d8d9476089134314695a1869ac1b14cd6c855e66a8ee90d",
+    "created": "2026-06-08T01:07:29.011Z",
+    "version": 1
+  },
+  "meta": {
+    "hydration": {
+      "needs": [
+        "raw_capability",
+        "output_requirements",
+        "purge_constraints"
+      ],
+      "produces": "card_body.md",
+      "carry": [
+        "title",
+        "artifact",
+        "carry_fields",
+        "purge_fields"
+      ],
+      "purge": [
+        "raw_capability",
+        "scratch_notes"
+      ]
+    }
+  }
+}

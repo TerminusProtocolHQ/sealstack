@@ -1,0 +1,14 @@
+{
+  "id": "sealstack-hydration-kit-af1461",
+  "kind": "deck",
+  "title": "SealStack hydration kit",
+  "summary": "A packaged workflow for Card-based hydration and receipt-based rehydration.",
+  "stacks": [
+    "hydration-workflow-95cc33"
+  ],
+  "seal": {
+    "fingerprint": "sha256:af14612a54e1574f00768380a25aefe18fe112feff3e4a7af216b886dc868949",
+    "created": "2026-06-08T01:07:29.016Z",
+    "version": 1
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "cards": [
+    "cards/convert-capability-to-card-07a0a8.json",
+    "cards/compose-hydration-stack-468eec.json",
+    "cards/package-hydration-deck-313aa9.json",
+    "cards/record-run-receipt-7a535d.json",
+    "cards/rehydrate-next-run-82396a.json"
+  ],
+  "stack": "stacks/hydration-workflow-95cc33.json",
+  "deck": "decks/sealstack-hydration-kit-af1461.json",
+  "run": "runs/run-d54baa187a.json"
+}

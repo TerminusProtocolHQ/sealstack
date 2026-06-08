@@ -1,0 +1,34 @@
+{
+  "id": "rehydrate-next-run-82396a",
+  "title": "Rehydrate next Run",
+  "summary": "Start the next loop from a receipt instead of re-reading everything.",
+  "tags": [
+    "hydration",
+    "rehydration",
+    "receipt"
+  ],
+  "body": "## Goal\nStart the next Run from the previous receipt carry state and next boundary, without flooding the context window.\n\n## Hydrate\n- previous receipt.carry\n- previous receipt.next_boundary\n- only external references required by the next boundary\n- the Deck or Card selected for the next bounded move\n\n## Do\n1. Load receipt.carry as the surviving state from the prior loop.\n2. Load receipt.next_boundary as the task boundary for the current loop.\n3. Load only the Card, Stack, or Deck required for that boundary.\n4. Reject requests to rehydrate from the full prior transcript unless the receipt is insufficient and the missing field is named.\n5. Run the next bounded move and close with a new receipt.\n\n## Produce\nA new Run started from receipt.carry + receipt.next_boundary, followed by a new receipt at exit.\n\n## Stop when\nThe loop has advanced using compact carry state rather than a full-history reload.\n\n## Carry\nnew receipt fields required by the following loop\n\n## Purge\nprevious raw context, stale carry fields not used by this boundary, and any reloaded history not explicitly needed",
+  "seal": {
+    "fingerprint": "sha256:82396a3d2750cded1684c64699e7740330558469175b29d77722092f95da340d",
+    "created": "2026-06-08T01:07:29.016Z",
+    "version": 1
+  },
+  "meta": {
+    "hydration": {
+      "needs": [
+        "receipt.carry",
+        "receipt.next_boundary",
+        "selected_card_or_deck"
+      ],
+      "produces": "next_run_context",
+      "carry": [
+        "new_receipt"
+      ],
+      "purge": [
+        "previous_raw_context",
+        "stale_carry",
+        "unneeded_history"
+      ]
+    }
+  }
+}

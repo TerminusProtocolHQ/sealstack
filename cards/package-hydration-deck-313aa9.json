@@ -1,0 +1,35 @@
+{
+  "id": "package-hydration-deck-313aa9",
+  "title": "Package hydration Deck",
+  "summary": "Package one or more Stacks into a runnable job boundary.",
+  "tags": [
+    "hydration",
+    "deck",
+    "workflow"
+  ],
+  "body": "## Goal\nPackage a workflow into a Deck that declares the job boundary and the Stacks available inside it.\n\n## Hydrate\n- Stack ids and summaries\n- the job boundary\n- the intended host or model context\n- the expected Run outcome\n\n## Do\n1. Name the Deck by the job it performs, not by implementation details.\n2. Include only Stacks that belong inside this job boundary.\n3. Write the summary as the host-facing routing line.\n4. Check that the Deck does not mix unrelated workflows.\n5. Create the Deck with makeDeck() so id and seal are computed.\n\n## Produce\nA Deck record with title, summary, stacks[], and computed id/seal from makeDeck().\n\n## Stop when\nThe Deck represents one runnable workflow boundary and every Stack belongs to that boundary.\n\n## Carry\ndeck id, deck fingerprint, stack ids, job boundary\n\n## Purge\nunrelated stack candidates and host-specific scratch notes",
+  "seal": {
+    "fingerprint": "sha256:313aa9ce1e2fddb97a7e6805bc1cce72a1c032ac24259c53d2ecf54ec924b13f",
+    "created": "2026-06-08T01:07:29.016Z",
+    "version": 1
+  },
+  "meta": {
+    "hydration": {
+      "needs": [
+        "stack_ids",
+        "stack_summaries",
+        "job_boundary"
+      ],
+      "produces": "deck.json",
+      "carry": [
+        "deck_id",
+        "deck_fingerprint",
+        "stack_ids"
+      ],
+      "purge": [
+        "unrelated_stacks",
+        "host_scratch"
+      ]
+    }
+  }
+}

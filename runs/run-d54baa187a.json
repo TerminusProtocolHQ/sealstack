@@ -1,0 +1,49 @@
+{
+  "id": "run-d54baa187a",
+  "kind": "run",
+  "deck": "sealstack-hydration-kit-af1461",
+  "deckFingerprint": "sha256:af14612a54e1574f00768380a25aefe18fe112feff3e4a7af216b886dc868949",
+  "model": "sealstack-bootstrap",
+  "input": "hydration workflow scaffold",
+  "outcome": "hydration Cards, Stack, Deck, and bootstrap receipt created for repository use",
+  "status": "done",
+  "startedAt": "2026-06-08T01:07:29.016Z",
+  "finishedAt": "2026-06-08T01:07:29.016Z",
+  "seal": {
+    "fingerprint": "sha256:d54baa187a3254e12f8bdfa1096dc6822fde26a40677a3585647e96d4c4d01bb",
+    "created": "2026-06-08T01:07:29.016Z",
+    "version": 1
+  },
+  "meta": {
+    "receipt": {
+      "changed": [
+        "created sealed Cards for capability-to-card conversion",
+        "created an ordered hydration Stack",
+        "created a packaged hydration Deck",
+        "created a bootstrap Run receipt for rehydration handoff"
+      ],
+      "verified": [
+        "all Card records verify with verifyCard()",
+        "Stack, Deck, and Run verify with verifyRecord()",
+        "receipt payload is explicitly marked as unsealed metadata under current SealStack semantics"
+      ],
+      "unverified": [
+        "receipt payload is not sealed until promoted into canonical Run payload in a future version"
+      ],
+      "next_boundary": "use the SealStack hydration kit Deck to author project-specific Cards and receipts",
+      "carry": {
+        "deck_id": "sealstack-hydration-kit-af1461",
+        "deck_fingerprint": "sha256:af14612a54e1574f00768380a25aefe18fe112feff3e4a7af216b886dc868949",
+        "stack_id": "hydration-workflow-95cc33",
+        "card_ids": [
+          "convert-capability-to-card-07a0a8",
+          "compose-hydration-stack-468eec",
+          "package-hydration-deck-313aa9",
+          "record-run-receipt-7a535d",
+          "rehydrate-next-run-82396a"
+        ],
+        "receipt_seal_boundary": "meta.receipt is unsealed in v0.6.1"
+      }
+    }
+  }
+}

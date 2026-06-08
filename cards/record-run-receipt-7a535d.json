@@ -1,0 +1,40 @@
+{
+  "id": "record-run-receipt-7a535d",
+  "title": "Record Run receipt",
+  "summary": "Close a workflow loop with a compact rehydration receipt.",
+  "tags": [
+    "hydration",
+    "run",
+    "receipt"
+  ],
+  "body": "## Goal\nRecord the result of a Deck execution and produce a compact receipt seed for the next loop.\n\n## Hydrate\n- Deck id and fingerprint\n- model or host used for the Run\n- input boundary\n- final artifact or outcome\n- verified and unverified claims from the completed loop\n\n## Do\n1. Summarize the outcome without replaying the full transcript.\n2. List what changed as concrete state transitions.\n3. List what was verified and how far the proof goes.\n4. List what remains unverified without softening uncertainty.\n5. Name the next boundary as the next bounded move, not a vague continuation.\n6. Write carry as the minimal state the next Run needs.\n7. Create the Run with makeRun(); attach meta.receipt only as an unsealed machine mirror unless the implementation seals receipt payloads.\n\n## Produce\nA Run record with computed id/seal and a receipt payload containing changed, verified, unverified, next_boundary, and carry.\n\n## Stop when\nThe next Run can start from receipt.carry and receipt.next_boundary without re-reading the whole prior context.\n\n## Carry\nreceipt.changed, receipt.verified, receipt.unverified, receipt.next_boundary, receipt.carry\n\n## Purge\nfull transcript, raw input unless explicitly required, scratch reasoning, and stale context",
+  "seal": {
+    "fingerprint": "sha256:7a535d134ace2a034c14cc8e1d6d16d39d88a9156de1d415d72d05bf9e5fdc58",
+    "created": "2026-06-08T01:07:29.016Z",
+    "version": 1
+  },
+  "meta": {
+    "hydration": {
+      "needs": [
+        "deck_id",
+        "deck_fingerprint",
+        "run_input",
+        "run_outcome",
+        "proof_notes"
+      ],
+      "produces": "run_receipt.json",
+      "carry": [
+        "changed",
+        "verified",
+        "unverified",
+        "next_boundary",
+        "carry"
+      ],
+      "purge": [
+        "full_transcript",
+        "raw_input",
+        "scratch_notes"
+      ]
+    }
+  }
+}

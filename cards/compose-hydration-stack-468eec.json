@@ -1,0 +1,35 @@
+{
+  "id": "compose-hydration-stack-468eec",
+  "title": "Compose hydration Stack",
+  "summary": "Order sealed Cards into a minimal workflow sequence.",
+  "tags": [
+    "hydration",
+    "stack",
+    "workflow"
+  ],
+  "body": "## Goal\nCompose a minimal ordered Stack from existing Cards so the agent can run a workflow without re-inventing the sequence.\n\n## Hydrate\n- candidate Card ids and summaries\n- the workflow goal\n- the output required at the end of the sequence\n- carry fields emitted by each Card\n\n## Do\n1. Select only Cards required for the workflow goal.\n2. Order Cards by dependency: each Card may depend only on prior carry state or declared external inputs.\n3. Check that every downstream Hydrate requirement is satisfied by either external input or prior Carry.\n4. Remove Cards that only add context bulk or duplicate another move.\n5. Name the Stack by the sequence outcome.\n\n## Produce\nA Stack record with title, summary, ordered cards[], and computed id/seal from makeStack().\n\n## Stop when\nEvery Card in cards[] has a reason to exist and each handoff is satisfied by declared carry or external input.\n\n## Carry\nstack title, ordered card ids, final artifact, unresolved external inputs\n\n## Purge\ndiscarded candidate Cards and ordering scratch work",
+  "seal": {
+    "fingerprint": "sha256:468eec983741a8aa1a780565fb1e92a27fb1e5ddf2810d9c6d0338f13696da11",
+    "created": "2026-06-08T01:07:29.016Z",
+    "version": 1
+  },
+  "meta": {
+    "hydration": {
+      "needs": [
+        "card_ids",
+        "card_summaries",
+        "workflow_goal"
+      ],
+      "produces": "stack.json",
+      "carry": [
+        "stack_title",
+        "ordered_card_ids",
+        "final_artifact"
+      ],
+      "purge": [
+        "discarded_candidates",
+        "ordering_notes"
+      ]
+    }
+  }
+}

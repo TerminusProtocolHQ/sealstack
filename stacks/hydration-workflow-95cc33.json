@@ -1,0 +1,18 @@
+{
+  "id": "hydration-workflow-95cc33",
+  "kind": "stack",
+  "title": "Hydration workflow",
+  "summary": "Convert a capability into Cards, compose a workflow, run it, receipt it, and rehydrate the next loop.",
+  "cards": [
+    "convert-capability-to-card-07a0a8",
+    "compose-hydration-stack-468eec",
+    "package-hydration-deck-313aa9",
+    "record-run-receipt-7a535d",
+    "rehydrate-next-run-82396a"
+  ],
+  "seal": {
+    "fingerprint": "sha256:95cc3317cddd9de63ad0eab06bf18e89ab43e828d6cc3d08b3e1c48c719ffeb6",
+    "created": "2026-06-08T01:07:29.016Z",
+    "version": 1
+  }
+}
